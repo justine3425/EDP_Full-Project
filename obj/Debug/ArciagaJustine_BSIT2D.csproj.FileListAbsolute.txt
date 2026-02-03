@@ -1,0 +1,10 @@
+C:\Users\1\source\repos\ArciagaJustine_BSIT2D\bin\Debug\ArciagaJustine_BSIT2D.exe.config
+C:\Users\1\source\repos\ArciagaJustine_BSIT2D\bin\Debug\ArciagaJustine_BSIT2D.exe
+C:\Users\1\source\repos\ArciagaJustine_BSIT2D\bin\Debug\ArciagaJustine_BSIT2D.pdb
+C:\Users\1\source\repos\ArciagaJustine_BSIT2D\obj\Debug\ArciagaJustine_BSIT2D.csproj.AssemblyReference.cache
+C:\Users\1\source\repos\ArciagaJustine_BSIT2D\obj\Debug\ArciagaJustine_BSIT2D.Form1.resources
+C:\Users\1\source\repos\ArciagaJustine_BSIT2D\obj\Debug\ArciagaJustine_BSIT2D.Properties.Resources.resources
+C:\Users\1\source\repos\ArciagaJustine_BSIT2D\obj\Debug\ArciagaJustine_BSIT2D.csproj.GenerateResource.cache
+C:\Users\1\source\repos\ArciagaJustine_BSIT2D\obj\Debug\ArciagaJustine_BSIT2D.csproj.CoreCompileInputs.cache
+C:\Users\1\source\repos\ArciagaJustine_BSIT2D\obj\Debug\ArciagaJustine_BSIT2D.exe
+C:\Users\1\source\repos\ArciagaJustine_BSIT2D\obj\Debug\ArciagaJustine_BSIT2D.pdb
