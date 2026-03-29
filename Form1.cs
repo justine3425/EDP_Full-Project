@@ -17,6 +17,11 @@ namespace ArciagaJustine_BSIT2D
             InitializeComponent();
         }
 
+        string[,] userCredentials =
+        {
+            {"justine", "arciaga", "Justine Arciaga!"}
+        };
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -39,19 +44,46 @@ namespace ArciagaJustine_BSIT2D
 
         private void tbLogin_Click(object sender, EventArgs e)
         {
-            if (tbUsername.Text == "") 
+            string username = tbUsername.Text.Trim();
+            string password = tbPassword.Text.Trim();
+
+            if (username == "")
             {
-                MessageBox.Show("Please enter Username! ", "Validation");
+                MessageBox.Show("Please enter Username!", "Validation");
+                tbUsername.Focus();
+                return;
+            }
+
+            if (password == "")
+            {
+                MessageBox.Show("Please enter password!", "Validation");
+                tbPassword.Focus();
+                return;
+            }
+
+            bool loginSuccess = false;
+
+            for (int x = 0; x < userCredentials.GetLength(0); x++)
+            {
+                if (username == userCredentials[x, 0] && password == userCredentials[x, 1])
+                {
+                    MessageBox.Show("Welcome " + userCredentials[x, 2]);
+
+                    frmHome home = new frmHome();
+                    home.Show();
+                    this.Hide();
+
+                    loginSuccess = true;
+                    break;
+                }
+            }
+
+            if (!loginSuccess)
+            {
+                MessageBox.Show("Invalid Username/Password", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tbUsername.Focus();
             }
-            else if (tbPassword.Text == "")
-            {
-                MessageBox.Show("Please enter password!,", "Validation");
-                tbPassword.Focus();
-            }
-           }
-     
-
+        }
 
         private void tbUsername_TextChanged(object sender, EventArgs e)
         {
