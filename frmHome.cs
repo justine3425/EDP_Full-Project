@@ -63,5 +63,17 @@ namespace ArciagaJustine_BSIT2D
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form1 f1 = new Form1();
+            f1.Show();
+            this.Hide();
+        }
+
+        private void frmHome_Load(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

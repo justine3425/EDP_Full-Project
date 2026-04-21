@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +17,7 @@ namespace ArciagaJustine_BSIT2D
         {
             InitializeComponent();
         }
-
+        MyDatabase db = new MyDatabase();
         string[,] userCredentials =
         {
             {"justine", "arciaga", "Justine Arciaga!"}
@@ -25,6 +26,14 @@ namespace ArciagaJustine_BSIT2D
         private void Form1_Load(object sender, EventArgs e)
         {
 
+            if (db.TestConnection() == true)
+            {
+                MessageBox.Show("Connected to Database");
+            }
+            else
+            {
+                MessageBox.Show("Database Connection Failed");
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -60,30 +69,24 @@ namespace ArciagaJustine_BSIT2D
                 tbPassword.Focus();
                 return;
             }
-
-            bool loginSuccess = false;
-
-            for (int x = 0; x < userCredentials.GetLength(0); x++)
+            else
             {
-                if (username == userCredentials[x, 0] && password == userCredentials[x, 1])
+                DataTable dt = db.ExecuteReturnQuery("SELECT * from tbLoginCredentials WHERE user_username = @uname and user_password = @pword;",
+                    new MySqlParameter("@uname", tbUsername.Text),
+                    new MySqlParameter("@pword", tbPassword.Text));
+                if (dt.Rows.Count == 1)
                 {
-                    MessageBox.Show("Welcome " + userCredentials[x, 2]);
-
-                    frmHome home = new frmHome();
-                    home.Show();
+                    frmHome frm = new frmHome();
                     this.Hide();
-
-                    loginSuccess = true;
-                    break;
+                    frm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Username or Password");
                 }
             }
-
-            if (!loginSuccess)
-            {
-                MessageBox.Show("Invalid Username/Password", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                tbUsername.Focus();
-            }
         }
+       
 
         private void tbUsername_TextChanged(object sender, EventArgs e)
         {
@@ -96,3 +99,4 @@ namespace ArciagaJustine_BSIT2D
         }
     }
 }
+
