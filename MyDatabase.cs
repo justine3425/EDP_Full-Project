@@ -11,10 +11,10 @@ namespace ArciagaJustine_BSIT2D
 {
     internal class MyDatabase
     {
-        string connectionString = "Server=localhost;Port=3306;Database='arciaga_db';Uid='root';Pwd=''";
+        string connectionString = "Server=localhost;Port=3306;Database='arciaga_db';Uid='root';Pwd='';Allow User Variables=True;AllowBatch=True";
         public bool TestConnection()
-
         {
+
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try
@@ -32,7 +32,37 @@ namespace ArciagaJustine_BSIT2D
                 }
             }
         }
-        //execute return query. used for query SELECT.
+        public int ExecuteNoReturnQuery(string query, params MySqlParameter[] parameters)
+        {
+            int affectedRows = 0;
+            using (MySqlConnection con = new MySqlConnection(connectionString))
+            {
+                MySqlCommand command = new MySqlCommand(query, con);
+                if (parameters != null)
+                {
+                    foreach (MySqlParameter param in parameters)
+                    {
+                        command.Parameters.Add(param);
+                    }
+
+                }
+                try
+                {
+                    con.Open();
+                    affectedRows = command.ExecuteNonQuery();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Execution failed: " + ex.Message);
+                }
+                finally
+                {
+                    con.Close();
+                }
+                return affectedRows;
+            }
+        }
         public DataTable ExecuteReturnQuery(string query, params MySqlParameter[] parameters)
         {
             using (MySqlConnection con = new MySqlConnection(connectionString))
@@ -64,5 +94,6 @@ namespace ArciagaJustine_BSIT2D
                 return dataTable;
             }
         }
+
     }
 }

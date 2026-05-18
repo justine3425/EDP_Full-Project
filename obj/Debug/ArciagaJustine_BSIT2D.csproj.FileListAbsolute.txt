@@ -37,3 +37,21 @@ C:\Users\1\Source\Repos\EDP_Full-Project\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\1\Source\Repos\EDP_Full-Project\bin\Debug\System.Buffers.dll
 C:\Users\1\Source\Repos\EDP_Full-Project\bin\Debug\MySql.Data.xml
 C:\Users\1\Source\Repos\EDP_Full-Project\obj\Debug\ArciagaJ.7C3BBE51.Up2Date
+C:\Users\Kim Jean\source\repos\Justine EDP\bin\Debug\ArciagaJustine_BSIT2D.exe.config
+C:\Users\Kim Jean\source\repos\Justine EDP\bin\Debug\ArciagaJustine_BSIT2D.exe
+C:\Users\Kim Jean\source\repos\Justine EDP\bin\Debug\ArciagaJustine_BSIT2D.pdb
+C:\Users\Kim Jean\source\repos\Justine EDP\bin\Debug\MySql.Data.dll
+C:\Users\Kim Jean\source\repos\Justine EDP\bin\Debug\System.Memory.dll
+C:\Users\Kim Jean\source\repos\Justine EDP\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Kim Jean\source\repos\Justine EDP\bin\Debug\System.Buffers.dll
+C:\Users\Kim Jean\source\repos\Justine EDP\bin\Debug\MySql.Data.xml
+C:\Users\Kim Jean\source\repos\Justine EDP\obj\Debug\ArciagaJustine_BSIT2D.csproj.AssemblyReference.cache
+C:\Users\Kim Jean\source\repos\Justine EDP\obj\Debug\ArciagaJustine_BSIT2D.Form1.resources
+C:\Users\Kim Jean\source\repos\Justine EDP\obj\Debug\ArciagaJustine_BSIT2D.frmHome.resources
+C:\Users\Kim Jean\source\repos\Justine EDP\obj\Debug\ArciagaJustine_BSIT2D.Users.resources
+C:\Users\Kim Jean\source\repos\Justine EDP\obj\Debug\ArciagaJustine_BSIT2D.Properties.Resources.resources
+C:\Users\Kim Jean\source\repos\Justine EDP\obj\Debug\ArciagaJustine_BSIT2D.csproj.GenerateResource.cache
+C:\Users\Kim Jean\source\repos\Justine EDP\obj\Debug\ArciagaJustine_BSIT2D.csproj.CoreCompileInputs.cache
+C:\Users\Kim Jean\source\repos\Justine EDP\obj\Debug\ArciagaJ.7C3BBE51.Up2Date
+C:\Users\Kim Jean\source\repos\Justine EDP\obj\Debug\ArciagaJustine_BSIT2D.exe
+C:\Users\Kim Jean\source\repos\Justine EDP\obj\Debug\ArciagaJustine_BSIT2D.pdb

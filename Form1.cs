@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ArciagaJustine_BSIT2D
 {
@@ -22,6 +23,7 @@ namespace ArciagaJustine_BSIT2D
         {
             {"justine", "arciaga", "Justine Arciaga!"}
         };
+        private object textBox1;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -56,33 +58,58 @@ namespace ArciagaJustine_BSIT2D
             string username = tbUsername.Text.Trim();
             string password = tbPassword.Text.Trim();
 
-            if (username == "")
+            if (db.TestConnection() == true)
             {
-                MessageBox.Show("Please enter Username!", "Validation");
-                tbUsername.Focus();
-                return;
-            }
-
-            if (password == "")
-            {
-                MessageBox.Show("Please enter password!", "Validation");
-                tbPassword.Focus();
-                return;
+                MessageBox.Show("Connected to Database");
             }
             else
             {
-                DataTable dt = db.ExecuteReturnQuery("SELECT * from tbLoginCredentials WHERE user_username = @uname and user_password = @pword;",
+                MessageBox.Show("Database Connection Failed");
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (tbUsername.Text == "")
+            {
+                MessageBox.Show("Please enter username", "Validation");
+            }
+            else if (tbPassword.Text == "")
+            {
+                MessageBox.Show("Please Enter Password", "Validation");
+                tbPassword.Focus();
+            }
+            else
+            {
+                DataTable dtActive = db.ExecuteReturnQuery(
+                    "SELECT * FROM tblLoginCredentials WHERE user_username = @uname AND user_password = @pword AND is_active = 1;",
                     new MySqlParameter("@uname", tbUsername.Text),
                     new MySqlParameter("@pword", tbPassword.Text));
-                if (dt.Rows.Count == 1)
+
+                if (dtActive.Rows.Count == 1)
                 {
                     frmHome frm = new frmHome();
-                    this.Hide();
                     frm.Show();
+                    this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Username or Password");
+                    DataTable dtInactive = db.ExecuteReturnQuery(
+                        "SELECT * FROM tblLoginCredentials WHERE user_username = @uname AND user_password = @pword AND is_active = 0;",
+                        new MySqlParameter("@uname", tbUsername.Text),
+                        new MySqlParameter("@pword", tbPassword.Text));
+
+                    if (dtInactive.Rows.Count == 1)
+                    {
+                        MessageBox.Show("This account has been deactivated.", "Account Deactivated");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid Username or Password", "Login Failed");
+                    }
+                    {
+                        MessageBox.Show("Invalid Username or Password");
+                    }
                 }
             }
         }
@@ -99,4 +126,3 @@ namespace ArciagaJustine_BSIT2D
         }
     }
 }
-
