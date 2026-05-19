@@ -55,21 +55,6 @@ namespace ArciagaJustine_BSIT2D
 
         private void tbLogin_Click(object sender, EventArgs e)
         {
-            string username = tbUsername.Text.Trim();
-            string password = tbPassword.Text.Trim();
-
-            if (db.TestConnection() == true)
-            {
-                MessageBox.Show("Connected to Database");
-            }
-            else
-            {
-                MessageBox.Show("Database Connection Failed");
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
             if (tbUsername.Text == "")
             {
                 MessageBox.Show("Please enter username", "Validation");
@@ -112,6 +97,13 @@ namespace ArciagaJustine_BSIT2D
                     }
                 }
             }
+
+        }
+        
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
        
 

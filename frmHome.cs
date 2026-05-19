@@ -19,42 +19,42 @@ namespace ArciagaJustine_BSIT2D
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Form registerForm = new Form();
+            Register registerForm = new Register();
             registerForm.Text = "Register";
             registerForm.Show();
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Form storeForm = new Form();
+            StoreStatus  storeForm = new StoreStatus();
             storeForm.Text = "Store Status";
             storeForm.Show();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            Form priceForm = new Form();
+            PriceBook priceForm = new PriceBook();
             priceForm.Text = "Price Book";
             priceForm.Show();
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            Form vendorsForm = new Form();
+            Vendors vendorsForm = new Vendors();
             vendorsForm.Text = "Vendors";
             vendorsForm.Show();
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            Form usersForm = new Form();
+            Users usersForm = new Users();
             usersForm.Text = "Users";
             usersForm.Show();
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            Form timeForm = new Form();
+            TimeClock timeForm = new TimeClock();
             timeForm.Text = "Time Clock";
             timeForm.Show();
         }
